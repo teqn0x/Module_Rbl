@@ -1,0 +1,31 @@
+Use of modules:
+
+
+Python:
+
+1) import bjetClasses
+2) make TLorentzVectors of the 4 leading jets and the lepton
+3) make a bjetExtractor instance:
+   jets = bjetExtractor(j1,j2,j3,j4,j1_MV1,j2_MV1,j3_MV1,j4_MV1)
+4) bjets and jets are now obtained with jets.bjet1, jets.bjet2, jets.jet1, jets.jet2
+5) make a bjetVariables instance:
+   bjetvars = bjetVariables(jets.bjet1,jets.bjet2,jets.jet1,jets.jet2,lep)
+6) call getR_bl() for R_bl:
+   R_bl = bjetvars.getR_bl()
+
+
+C++:
+
+1) load the 2 libraries bjetExtractor_cxx.so and bjetVariables_cxx.so
+   gSystem->Load("bjetExtractor_cxx.so");
+   gSystem->Load("bjetVariables_cxx.so");
+2) make TLorentzVectors of the 4 leading jets and the lepton
+3) make a bjetExtractor instance:
+   bjetExtractor jets(j1,j2,j3,j4,j1_MV1,j2_MV1,j3_MV1,j4_MV1);
+4) bjets and jets are now obtained with jets.bjet1, jets.bjet2, jets.jet1, jets.jet2
+5) make a bjetVariables instance:
+   bjetVariables bjetvars(jets.bjet1,jets.bjet2,jets.jet1,jets.jet2,lep)
+6) call getR_bl() for R_bl:
+   R_bl = bjetvars.getR_bl()
+ 
+   
